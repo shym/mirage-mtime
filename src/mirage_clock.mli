@@ -22,7 +22,7 @@
 (** {2 POSIX clock}
 
     Clock counting time since the Unix epoch. Subject to adjustment by e.g. NTP. *)
-module type PCLOCK = sig
+module Pclock : sig
   val now_d_ps : unit -> int * int64
   (** [now_d_ps ()] is [(d, ps)] representing the POSIX time occurring at [d] *
       86'400e12 + [ps] POSIX picoseconds from the epoch 1970-01-01 00:00:00 UTC.
@@ -43,7 +43,7 @@ end
 
     Clock returning monotonic time since an arbitrary point. To be used for e.g.
     profiling. *)
-module type MCLOCK = sig
+module Mclock : sig
   val elapsed_ns : unit -> int64
   (** [elapsed_ns ()] is a monotonically increasing count of nanoseconds elapsed
       since some arbitrary point *)

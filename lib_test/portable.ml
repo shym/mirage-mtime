@@ -1,3 +1,5 @@
+open Mirage_clock
+
 let print_time c =
   let d, ps = Pclock.now_d_ps c in
   Printf.printf "The time is %d days and %Ld picoseconds since the epoch.\n" d
