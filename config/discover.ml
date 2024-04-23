@@ -1,9 +1,9 @@
 module C = Configurator.V1
 
 let () =
-  C.main ~name:"mirage-clock-unix" (fun c ->
+  C.main ~name:"mirage-clock" (fun c ->
       let is_android =
-        let defines =
+        let android_defines =
           C.C_define.import c ~includes:[] [ ("__ANDROID__", Switch) ]
         in
         match defines with (_, Switch true) :: _ -> true | _ -> false
