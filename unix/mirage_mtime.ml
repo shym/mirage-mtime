@@ -14,7 +14,4 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *)
 
-external elapsed_ns : unit -> int64 = "ocaml_monotonic_clock_elapsed_ns"
-
-let elapsed_ns _ = elapsed_ns ()
-let period_ns _ = None
+include Mtime_clock

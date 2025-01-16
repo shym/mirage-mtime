@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2010 Anil Madhavapeddy <anil@recoil.org>
+(*
+ * Copyright (c) 2015 Matt Gray <matthew.thomas.gray@gmail.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -12,22 +12,17 @@
  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- */
+ *)
+(** {2 Monotonic clock}
 
-#include "solo5.h"
+    Clock returning monotonic time since an arbitrary point. To be used for e.g.
+    profiling. *)
 
-#include <sys/time.h>
+val elapsed_ns : unit -> int64
+(** [elapsed_ns ()] is a monotonically increasing count of nanoseconds elapsed
+    since some arbitrary point *)
 
-#include <caml/mlvalues.h>
-#include <caml/alloc.h>
-#include <caml/memory.h>
-#include <caml/fail.h>
+val period_ns : unit -> int64 option
+(** [period_ns ()] is [Some ns] representing the clock's nanosecond period
+    [ns], if known *)
 
-// caml_get_monotonic_time is already defined in mirage-solo5
-
-CAMLprim value
-caml_get_wall_clock(value v_unit)
-{
-  CAMLparam1(v_unit);
-  CAMLreturn(caml_copy_int64(solo5_clock_wall()));
-}

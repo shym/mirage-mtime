@@ -1,5 +1,5 @@
 (library
- (name mirage_clock)
- (public_name mirage-clock)
- (virtual_modules mirage_clock)
- (default_implementation mirage-clock.unix))
+ (name mirage_mtime)
+ (public_name mirage-mtime)
+ (virtual_modules mirage_mtime)
+ (default_implementation mirage-mtime.unix))
