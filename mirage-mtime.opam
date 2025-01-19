@@ -17,7 +17,7 @@ It implements a monotonic timesource since an arbitrary point.
 depends: [
   "ocaml" {>= "4.08.0"}
   "dune" {>= "2.8"}
-  "mtime" {>= "2.1.0"}
+  "mtime" {>= "2.0.0"}
 ]
 build: [
   ["dune" "subst"] {dev}
