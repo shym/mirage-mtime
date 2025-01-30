@@ -1,3 +1,8 @@
+### v5.0.0 (2025-01-30)
+
+* Renamed to mirage-mtime (from mirage-clock), only the MCLOCK part
+* use "dune variants" for the different implementations
+
 ### v4.2.0 (2022-03-27)
 
 * Rename the freestanding toolchain to solo5 (@dinosaure, #51)
