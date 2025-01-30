@@ -15,5 +15,4 @@
  *)
 
 let elapsed_ns () = !Mirage_mtime_set.now
-
 let period_ns () = None

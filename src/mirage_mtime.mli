@@ -23,6 +23,5 @@ val elapsed_ns : unit -> int64
     since some arbitrary point *)
 
 val period_ns : unit -> int64 option
-(** [period_ns ()] is [Some ns] representing the clock's nanosecond period
-    [ns], if known *)
-
+(** [period_ns ()] is [Some ns] representing the clock's nanosecond period [ns],
+    if known *)
